@@ -68,7 +68,7 @@ export default function Home() {
     </button>
   );
 
-  const translateJSON = {
+  const translateJSON: any = {
     "འདི་གོ་བ་ལོག་པ་ཞིག་རེད": "那只是一个误解",
     "དབྱིན་ཡིག་གལ་ཇེ་ཆེ་རེད །": "英语变得越来越重要",
     "ཆེས་སྤྲོ་བའི་བྱ་བ་ཅི་ཞིག་རེད །": "什么是最有趣的事情",
