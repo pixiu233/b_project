@@ -25,7 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.bg1{
+  background-image: url('../../public/bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
