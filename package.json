@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.8.2",
+    "@ant-design/icons": "^5.3.4",
     "@types/styled-components": "^5.1.34",
     "antd": "^5.15.3",
     "localforage": "^1.10.0",

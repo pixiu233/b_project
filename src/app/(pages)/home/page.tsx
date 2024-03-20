@@ -104,7 +104,7 @@ const HomePage = () => {
             className="w-[400px] h-[60px] mb-4 p-0"
             placeholder="请输入藏文"
           />
-          <div className="w-[400px] h-[300px]">
+          <div className="w-[400px] h-[300px] mb-5">
             <ExUpload
               className="w-full h-full"
               maxCount={1}
