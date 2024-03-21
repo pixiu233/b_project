@@ -1,31 +1,20 @@
 "use client";
-import { useIndexedDB } from "@/app/hooks/db";
-import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import {
-  GetProp,
-  Input,
-  Upload,
-  UploadProps,
-  message,
-  Image,
-  UploadFile,
-  Modal,
-  Button,
-  Space,
-} from "antd";
-import { useState } from "react";
-import styled from "styled-components";
+import { Button, Input } from "antd";
 
 const Item = ({ data, dele }: any) => {
   return (
     <div className="m-auto w-[1100px] max-h-[420px] justify-between   flex   mb-5">
       <div>
         <div className="w-[400px] h-[300px] bg-white flex justify-center items-center">
-          <img
-            alt="example"
-            style={{ width: "100%", height: "100%" }}
-            src={data.previewImage}
-          />
+          {data.previewImage ? (
+            <img
+              alt="example"
+              style={{ width: "100%", height: "100%" }}
+              src={data.previewImage}
+            />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <div className="flex flex-col ">
