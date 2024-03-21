@@ -1,17 +1,15 @@
 "use client";
 import { useIndexedDB } from "@/app/hooks/db";
-import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined } from "@ant-design/icons";
 import {
+  Button,
   GetProp,
   Input,
-  Upload,
-  UploadProps,
-  message,
-  Image,
-  UploadFile,
   Modal,
-  Button,
   Space,
+  Upload,
+  UploadFile,
+  UploadProps,
 } from "antd";
 import Link from "next/link";
 import { useState } from "react";
@@ -51,8 +49,8 @@ const HomePage = () => {
   const [words, setWords] = useState<any>("");
   const handleCancel = () => setPreviewOpen(false);
   const [value, setValue] = useState<any>("");
-  const handlePreview = async (file: any) => {
-    if (!file && !file?.url && !file.preview) {
+  const handlePreview = async (file: UploadFile) => {
+    if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj as FileType);
     }
 
@@ -66,14 +64,13 @@ const HomePage = () => {
   const handleChange: UploadProps["onChange"] = async ({
     fileList: newFileList,
   }) => {
-    setFileList(newFileList);
     const file: any = newFileList[0];
-    if (!file) return;
-    if (!file && !file?.url && !file?.preview) {
-      file.preview = await getBase64(file?.originFileObj as FileType);
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj as FileType);
     }
 
-    setPreviewImage(file?.url || (file.preview as string));
+    setPreviewImage(file.url || (file.preview as string));
+    setFileList(newFileList);
   };
 
   const uploadButton = (
